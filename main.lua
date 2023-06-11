@@ -18,7 +18,12 @@ local function eventHandler(self, event, ...)
 			end
 		end
 		if numCards > 0 then
-			print("\124cffFFD700AutoSellFatedFortuneCards: Sold", numCards, "Fated Fortune Cards\124r")
+			if numCards == 1 then
+				print("\124cffFFD700AutoSellFatedFortuneCards: Sold", numCards, "Fated Fortune Card\124r")
+			else
+				print("\124cffFFD700AutoSellFatedFortuneCards: Sold", numCards, "Fated Fortune Cards\124r")
+			end
+			
 		end
 	end
 end
