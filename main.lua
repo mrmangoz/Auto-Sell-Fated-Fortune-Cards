@@ -8,9 +8,10 @@ local function eventHandler(self, event, ...)
 		for bag=0,NUM_BAG_SLOTS do
 			for slot=1,C_Container.GetContainerNumSlots(bag) do
 				local itemID = C_Container.GetContainerItemID(bag, slot)
+				local cardName = GetItemInfo(199143) -- get card name initial
 				if itemID then
 					local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(itemID)
-					if itemName == "Fated Fortune Card" then
+					if itemName == cardName then
 						numCards = numCards + 1;
 						C_Container.UseContainerItem(bag, slot)
 					end
